@@ -47,8 +47,12 @@ body {
   min-height: -webkit-fill-available;
 }
 
-html {
+html,
+body,
+#root {
   height: -webkit-fill-available;
+  height: 100%;
+  margin: 0;
 }
 
 header {

@@ -1,0 +1,379 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&family=Shadows+Into+Light&display=swap');
+
+:root {
+  /* CSS Main color scheme HEX */
+  --olive: #7E8031ff;
+  --gold-fusion: #897450ff;
+  --corn: #F6E94Dff;
+  --khaki-web: #D1BEA2ff;
+  --jet: #343540ff;
+  --pine-tree: #2C2C26ff;
+
+  /* y00t font color */
+  --yblue: #5B7F9D;
+  --yred: #F75024;
+  --yyellow: #ECCC45;
+
+  /* boxshadow */
+  --bshadow: 0px 0px 9rem 65px rgba(0, 0, 0, 0.31) inset;
+  --lightbshadow: 0px 1px 190px 4px rgb(256 256 256 / 2.5%) inset;
+}
+
+.yblue {
+  color: var(--yblue);
+}
+
+.yred {
+  color: var(--yred);
+}
+
+.yyellow {
+  color: var(--yyellow);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  background: #343541;
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+}
+
+header {
+  background: var(--pine-tree);
+  height: 26vh;
+  width: 100%;
+  padding: 1rem 1rem 0 1rem;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+  overflow-y: hidden;
+  border-bottom: var(--corn) solid 3px;
+  display: flex;
+  align-items: center;
+  font-weight: 300;
+  box-shadow: var(--lightbshadow);
+}
+
+.img-container {
+  background-color: var(--olive);
+  padding: 2px 25px 0 15px;
+  border-radius: 100px;
+  margin-right: 0.5rem;
+}
+
+#y00t9022 {
+  position: relative;
+  bottom: 0;
+  vertical-align: bottom;
+  height: auto;
+  width: 167px;
+}
+
+header {
+  color: #ffffff;
+}
+
+header .main-heading h1 {
+  margin-bottom: 0;
+  font-weight: 300;
+}
+
+header .main-heading p {
+  margin: 0;
+}
+
+.tagline {
+  font-size: 1rem;
+}
+
+.y00t {
+  font-family: 'Shadows Into Light', cursive;
+  font-size: 4rem;
+}
+
+.tagline .y00t {
+  font-size: 1.65em;
+}
+
+p span.y00t {
+  font-size: 2rem;
+}
+
+.main-heading {
+  margin-left: 2rem;
+}
+
+#app {
+  width: 100vw;
+  height: 74vh;
+  background: var(--pine-tree);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow:
+  var(--lightbshadow);
+}
+
+#chat_container {
+  flex: 1;
+  width: 100%;
+  height: 100%;
+  overflow-y: scroll;
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  padding-bottom: 20px;
+  scroll-behavior: smooth;
+}
+
+/* hides scrollbar */
+#chat_container::-webkit-scrollbar {
+  width: 0;
+}
+
+#chat_container::-webkit-scrollbar-thumb {
+  background: transparent;
+}
+
+.wrapper {
+  display: flex;
+  margin: 10px 0;
+}
+
+.wrapper.ai {
+  flex-direction: row-reverse;
+}
+
+.profile {
+  margin-right: 10px;
+}
+
+.profile img {
+  width: 50px;
+  height: 50px;
+}
+
+.ai .profile img {
+  width: 100px;
+  height: 100px;
+}
+
+.message {
+  max-width: 65%;
+  background: var(--khaki-web);
+  border-radius: 15px;
+  padding: 10px 15px;
+  font-size: 1rem;
+}
+
+.ai .message {
+  background: var(--corn);  
+  position: relative;
+}
+
+.ai>.message:after {
+	  content: '';
+    position: absolute;
+    right: 1px;
+    top: 33%;
+    width: 0;
+    height: 0;
+    border: 20px solid transparent;
+    border-left-color: var(--corn);
+    border-right: 0;
+    margin-top: -20px;
+    margin-right: -20px;
+}
+
+form {
+  display: flex;
+  width: 100%;
+  padding: 0.5rem;
+  box-shadow: var(--bshadow);
+}
+
+form input {
+  flex: 1;
+  height: 50px;
+  border: none;
+  border-radius: 25px 0 0 25px;
+  padding: 0 1rem;
+  font-size: 1rem;
+  font-weight: 400;
+  background: var(--khaki-web);
+  color: var(--jet);
+}
+
+textarea {
+  width: 100%;
+  background: var(--pine-tree);
+  padding: 1rem;
+  color: #ffffff;
+  border: solid 1px var(--corn);
+  border-radius: 25px 0 0 25px;
+}
+
+.submitButton {
+  width: 60px;
+  height: 50px;
+  border: none;
+  border-radius: 0 25px 25px 0;
+  background: var(--corn);
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 400;
+  padding: 0 1rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.submitButton.disabled {
+  background: var(--jet);
+  cursor: not-allowed;
+}
+
+.submitButton:hover {
+  background: var(--gold-fusion);
+}
+
+.submitButton img {
+  width: 100%;
+}
+
+.floating {
+  animation: float 5s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0%);
+  }
+  50% {
+    transform: translateY(-15%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+
+
+/* mobile based css */
+/* On screens that are 600px or less, set the background color to olive */
+@media screen and (max-width: 600px) {
+  .main-heading {
+    margin-left:5px;
+    font-size: 0.6rem;
+  }
+
+  header .main-heading .heading-title {
+    margin-bottom: 0;
+    font-size: 2.2rem;
+    font-weight: lighter;
+  }
+
+  header .main-heading p {
+    margin-top: 0;
+    font-weight: lighter;
+    text-align: center;
+    font-size: 1rem;
+  }
+  
+  .menuButton {
+    padding: 0.25rem;
+  }
+
+  .y00t{
+    font-size: 2.75rem;
+  }
+
+  .img-container {
+    display: flex;
+    align-self: end;
+  }
+}
+
+/* sidebar */
+.menuButton {
+  font-size: 30px;
+  cursor: pointer;
+  position: absolute;
+  background: var(--corn);
+  padding: 0.75rem;
+  border-radius: 0 0 0.75rem 0;
+}
+
+/* The side navigation menu */
+.sidenav {
+  height: 100%; /* 100% Full-height */
+  width: 0; /* 0 width - change this with JavaScript */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Stay on top */
+  top: 0; /* Stay at the top */
+  left: 0;
+  background-color: var(--pine-tree); /* Black*/
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 60px; /* Place content 60px from the top */
+  transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+}
+
+.menuBorder {
+  border-right: solid 5px var(--yyellow);
+}
+
+/* The navigation menu links */
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+/* Position and style the close button (top right corner) */
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+#main {
+  transition: margin-left .5s;
+  padding: 20px;
+}
+
+.credit {
+
+  width: 100%;
+  height:  auto;
+  display: inline;
+}
+
+.credit a {
+  font-size: 1rem;
+  color: #ffffff;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}

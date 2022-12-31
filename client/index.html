@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>myCodingBuddy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;900&family=Shadows+Into+Light&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    
+
+    <div id="menuNav" class="sidenav">
+      <div class="credit">
+        <a href="https://twitter.com/y00tsAnchorClub">y00ts Anchor Club Member #9022</a>
+      </div>
+
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      <a href="#">
+        DigitalOwl.Eth
+      </a>
+      <img src="assets/digitalowlethqrcode.png" alt="digitalowl.eth wallet address qr code"/>
+      
+    </div>
+    
+    <!-- Use any element to open the sidenav -->
+    <span class="menuButton" onclick="openNav()">&#9776;</span>
+
+
+    <header>
+      <div class="img-container">
+        <img id="y00t9022" src="assets/y00tbot.svg" />
+      </div>
+
+      <div class="main-heading">
+        <p class="heading-title">
+          <span class="y00t">y00tiful</span> Mind
+        </p>
+        <p class="tagline">an ai experience, but <span class="y00t">y00t'd</span>.</p>
+        
+      </div>
+    </header>
+
+    <div id="app">
+
+      <div id="chat_container"></div>
+
+      <form>
+        <textarea
+          name="prompt"
+          rows="1"
+          col="1"
+          placeholder="A y00tiful mind awaits ..."
+        ></textarea>
+
+        <button class="submitButton" id="submitButton" type="submit">
+          <img src="assets/black-pplane-svg.svg" />
+        </button>
+      </form>
+    </div>
+    <script type="module" src="script.js"></script>
+    <script>
+      function openNav() {
+        document.querySelector('#menuNav').style.width = "300px";
+        document.querySelector('#menuNav').classList.add('menuBorder');
+      }
+      
+      function closeNav() {
+        document.querySelector('#menuNav').style.width = "0px";
+        document.querySelector('#menuNav').classList.remove('menuBorder');
+      }
+      </script>
+  </body>
+</html>

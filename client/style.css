@@ -389,6 +389,6 @@ textarea {
     align-self: end;
   }
   .app {
-    height: 73%;
+    max-height: 73%;
   }
 }

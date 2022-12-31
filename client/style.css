@@ -300,6 +300,9 @@ textarea {
     display: flex;
     align-self: end;
   }
+  .app {
+    height: 60vh;
+  }
 }
 
 /* sidebar */

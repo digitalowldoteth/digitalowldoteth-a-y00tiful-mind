@@ -358,6 +358,9 @@ textarea {
 /* mobile based css */
 /* On screens that are 600px or less, set the background color to olive */
 @media screen and (max-width: 600px) {
+  header {
+    height: 28%;
+  }
   .main-heading {
     margin-left:5px;
     font-size: 0.6rem;
@@ -389,6 +392,6 @@ textarea {
     align-self: end;
   }
   .app {
-    height: 45vh;
+    height: 73%;
   }
 }

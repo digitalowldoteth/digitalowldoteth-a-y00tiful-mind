@@ -24,12 +24,18 @@ function typeText(element, text) {
     if (index < text.length) {
       element.innerHTML += text.charAt(index);
       index += 1;
+
+      // Scroll to the most recent response after every 15 characters
+      if (index % 25 === 0) {
+        scrollToMostRecentResponse();
+      }
     } else {
       clearInterval(interval);
       enableButton();
     }
-  }, 20);
+  }, 50); // Increase interval delay to allow for more characters to be typed
 }
+
 
 function enableButton() {
   subButton.disabled = false;
@@ -94,11 +100,8 @@ if (storedChatHistory) {
 scrollToMostRecentResponse();
 
 
-// Add a button to the chat window
-const clearButton = document.querySelector('.clearButton');
-
-// Add a click event listener to the button
-clearButton.addEventListener('click', (e) => {
+// Add a click event listener to the clear chat history button
+document.querySelector('.clearButton').addEventListener('click', (e) => {
   e.preventDefault();
   
   // Clear chat history from local storage
@@ -106,6 +109,7 @@ clearButton.addEventListener('click', (e) => {
   // Clear chat history from the chat container
   chatContainer.innerHTML = '';
 });
+
 
 
 // handleSubmit function 

@@ -66,6 +66,15 @@ function chatStripe(isAi, value, uniqueId) {
   );
 }
 
+function scrollToMostRecentResponse() {
+  // Select the chat container element
+  const chatContainer = document.querySelector('#chat_container');
+
+  // Scroll to the bottom of the chat container
+  chatContainer.scrollTop = chatContainer.scrollHeight;
+}
+
+
 // Define array to store user requests and bot responses
 let chatHistory = [];
 
@@ -80,6 +89,9 @@ if (storedChatHistory) {
     chatContainer.innerHTML += chatStripe(true, botResponse);
   });
 }
+
+// Call the scrollToMostRecentResponse function after the chat history has been loaded
+scrollToMostRecentResponse();
 
 const handleSubmit = async (e) => {
   e.preventDefault();

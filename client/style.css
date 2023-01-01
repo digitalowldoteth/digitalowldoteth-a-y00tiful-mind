@@ -31,7 +31,7 @@
 }
 
 
-.menuButton, .submitButton {
+.menuButton, .submitButton, .clearButton {
   background: var(--corn);
 }
 
@@ -257,7 +257,6 @@ textarea {
   padding: 1rem;
   color: #ffffff;
   border: solid 1px #ffffff;
-  border-radius: 25px 0 0 25px;
 }
 
 textarea::placeholder {
@@ -265,7 +264,7 @@ textarea::placeholder {
 }
 
 
-.submitButton {
+.submitButton, .clearButton {
   width: 60px;
   height: 50px;
   border: none;
@@ -276,6 +275,10 @@ textarea::placeholder {
   padding: 0 1rem;
   cursor: pointer;
   transition: background 0.3s;
+}
+
+.clearButton {
+  border-radius: 25px 0 0 15px;
 }
 
 .submitButton.disabled {

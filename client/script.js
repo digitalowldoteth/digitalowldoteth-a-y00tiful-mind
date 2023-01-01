@@ -60,7 +60,7 @@ function chatStripe(isAi, value, uniqueId) {
           alt="${isAi ? 'bot' : 'user'}"
         />
       </div>
-      <div class="message" id=${uniqueId}>${value}</div>
+      <p class="message" id=${uniqueId}>${value}</p>
     </div>
     `
   );
@@ -93,6 +93,20 @@ if (storedChatHistory) {
 // Call the scrollToMostRecentResponse function after the chat history has been loaded
 scrollToMostRecentResponse();
 
+
+// Add a button to the chat window
+const clearButton = document.querySelector('.clearButton');
+
+// Add a click event listener to the button
+clearButton.addEventListener('click', () => {
+  // Clear chat history from local storage
+  localStorage.removeItem('chatHistory');
+  // Clear chat history from the chat container
+  chatContainer.innerHTML = '';
+});
+
+
+// handleSubmit function 
 const handleSubmit = async (e) => {
   e.preventDefault();
 

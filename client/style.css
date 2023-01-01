@@ -224,6 +224,7 @@ p span.y00t {
   padding: 10px 15px;
   font-size: 1rem;
   border: solid 2px var(--pacific-blue);
+  height: max-content;
 }
 
 .ai .message {

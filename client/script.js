@@ -1,5 +1,5 @@
 
-import bot from './assets/y00tbot.svg';
+import bot from './assets/my00tbot.svg';
 import user from './assets/user1.svg';
 
 const form = document.querySelector('form');

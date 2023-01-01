@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto&family=Shadows+Into+Light&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
 
 :root {
   /* CSS Main color scheme HEX */
@@ -9,6 +9,17 @@
   --jet: #343540ff;
   --pine-tree: #2C2C26ff;
 
+
+  /* MYAC */
+  --light-sea-green: #16B4AEff;
+  --yellow-green-crayola: #D5DE8Fff;
+  --chestnut: #8F4427ff;
+  --nadeshiko-pink: #F6ADC8ff;
+  --pacific-blue: #03A7CAff;
+  --dark-jungle-green: #222721ff;
+  --opera-mauve: #A880AAff;
+
+
   /* y00t font color */
   --yblue: #5B7F9D;
   --yred: #F75024;
@@ -17,6 +28,30 @@
   /* boxshadow */
   --bshadow: 0px 0px 9rem 65px rgba(0, 0, 0, 0.31) inset;
   --lightbshadow: 0px 1px 190px 4px rgb(256 256 256 / 2.5%) inset;
+}
+
+
+.menuButton, .submitButton {
+  background: var(--corn);
+}
+
+header, .ai .message {
+  background: var(--pacific-blue);
+}
+
+.menuBorder {
+  border-right: solid 5px var(--yellow-green-crayola)
+}
+
+.qry00t {
+  width: 100%;
+  align-self: center;
+  display: flex;
+}
+
+.qry00t img{
+  height: 40%;
+  width: 40%;
 }
 
 .yblue {
@@ -35,12 +70,12 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Josefin Sans', sans-serif;
 }
 
 body {
   background: #343541;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Josefin Sans', sans-serif;
   font-size: 16px;
   min-height: 100vh;
   /* mobile viewport bug fix */
@@ -56,7 +91,6 @@ body,
 }
 
 header {
-  background: var(--pine-tree);
   height: 26%;
   width: 100%;
   padding: 1rem 1rem 0 1rem;
@@ -64,7 +98,7 @@ header {
   justify-content: center;
   vertical-align: middle;
   overflow-y: hidden;
-  border-bottom: var(--corn) solid 3px;
+  border-bottom: solid 3px var(--yellow-green-crayola);
   display: flex;
   align-items: center;
   font-weight: 300;
@@ -72,10 +106,12 @@ header {
 }
 
 .img-container {
-  background-color: var(--olive);
-  padding: 2px 25px 0 15px;
-  border-radius: 100px;
-  margin-right: 0.5rem;
+  background-color: var(--light-sea-green);
+    padding: 2px 0px 0 15px;
+    border-radius: 100px;
+    margin-right: 0.5rem;
+    border: solid 3px var(--yellow-green-crayola);
+    margin-bottom: -12px;
 }
 
 #y00t9022 {
@@ -88,23 +124,26 @@ header {
 
 header {
   color: #ffffff;
+  font-weight: 500;
 }
 
 header .main-heading h1 {
   margin-bottom: 0;
-  font-weight: 300;
 }
 
 header .main-heading p {
   margin: 0;
 }
 
+.heading-title {
+  font-size: 2rem;
+}
+
 .tagline {
-  font-size: 1rem;
+  font-size: 1.5rem;
 }
 
 .y00t {
-  font-family: 'Shadows Into Light', cursive;
   font-size: 4rem;
 }
 
@@ -113,7 +152,7 @@ header .main-heading p {
 }
 
 p span.y00t {
-  font-size: 2rem;
+  font-size: 3.5rem;
 }
 
 .main-heading {
@@ -122,14 +161,13 @@ p span.y00t {
 
 #app {
   width: 100vw;
-  height: 74%;
-  background: var(--pine-tree);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  box-shadow:
-  var(--lightbshadow);
+    height: 74%;
+    background: #0d0d0d;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: var(--lightbshadow);
 }
 
 #chat_container {
@@ -181,29 +219,16 @@ p span.y00t {
 
 .message {
   max-width: 65%;
-  background: var(--khaki-web);
+  background: var(--yellow-green-crayola);
   border-radius: 15px;
   padding: 10px 15px;
   font-size: 1rem;
+  border: solid 2px var(--pacific-blue);
 }
 
 .ai .message {
-  background: var(--corn);  
   position: relative;
-}
-
-.ai>.message:after {
-	  content: '';
-    position: absolute;
-    right: 1px;
-    top: 33%;
-    width: 0;
-    height: 0;
-    border: 20px solid transparent;
-    border-left-color: var(--corn);
-    border-right: 0;
-    margin-top: -20px;
-    margin-right: -20px;
+  border: solid 2px var(--yellow-green-crayola);
 }
 
 form {
@@ -227,19 +252,23 @@ form input {
 
 textarea {
   width: 100%;
-  background: var(--pine-tree);
+  background: var(--jet);
   padding: 1rem;
   color: #ffffff;
-  border: solid 1px var(--corn);
+  border: solid 1px #ffffff;
   border-radius: 25px 0 0 25px;
 }
+
+textarea::placeholder {
+  color: #cfcfcf;
+}
+
 
 .submitButton {
   width: 60px;
   height: 50px;
   border: none;
   border-radius: 0 25px 25px 0;
-  background: var(--corn);
   color: #ffffff;
   font-size: 1rem;
   font-weight: 400;
@@ -285,8 +314,7 @@ textarea {
   font-size: 30px;
   cursor: pointer;
   position: absolute;
-  background: var(--corn);
-  padding: 0.75rem;
+  padding: 0.25rem;
   border-radius: 0 0 0.75rem 0;
 }
 
@@ -298,15 +326,12 @@ textarea {
   z-index: 1; /* Stay on top */
   top: 0; /* Stay at the top */
   left: 0;
-  background-color: var(--pine-tree); /* Black*/
+  background-color: var(--pacific-blue); /* Black*/
   overflow-x: hidden; /* Disable horizontal scroll */
   padding-top: 60px; /* Place content 60px from the top */
   transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
 }
 
-.menuBorder {
-  border-right: solid 5px var(--yyellow);
-}
 
 /* The navigation menu links */
 .sidenav a {

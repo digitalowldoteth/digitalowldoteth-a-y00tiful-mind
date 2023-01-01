@@ -278,7 +278,11 @@ textarea::placeholder {
 }
 
 .clearButton {
-  border-radius: 25px 0 0 15px;
+  border-radius: 25px 0 0 25px;
+}
+
+.clearButton img {
+  width: 100%;
 }
 
 .submitButton.disabled {

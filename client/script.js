@@ -98,7 +98,9 @@ scrollToMostRecentResponse();
 const clearButton = document.querySelector('.clearButton');
 
 // Add a click event listener to the button
-clearButton.addEventListener('click', () => {
+clearButton.addEventListener('click', (e) => {
+  e.preventDefault();
+  
   // Clear chat history from local storage
   localStorage.removeItem('chatHistory');
   // Clear chat history from the chat container

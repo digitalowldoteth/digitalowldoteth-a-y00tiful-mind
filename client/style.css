@@ -233,9 +233,11 @@ p span.y00t {
 }
 
 .thankYou{
+  font-size: .8rem;
+  background: #0d0d0d;
   width: 100%;
   text-align: center;
-  background: var(--yellow-green-crayola);
+  color: var(--yellow-green-crayola);
   padding: 3px;
 }
 

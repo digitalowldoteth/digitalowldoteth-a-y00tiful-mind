@@ -45,13 +45,13 @@ header, .ai .message {
 
 .qry00t {
   width: 100%;
-  align-self: center;
-  display: flex;
+  align-content: center;
+  display: block;
 }
 
 .qry00t img{
-  height: 40%;
-  width: 40%;
+  height: 48%;
+  width: 48%;
 }
 
 .yblue {
@@ -338,7 +338,7 @@ textarea::placeholder {
   padding: 8px 8px 8px 32px;
   text-decoration: none;
   font-size: 25px;
-  color: #818181;
+  color: var(--yellow-green-crayola);
   display: block;
   transition: 0.3s;
 }
@@ -364,9 +364,12 @@ textarea::placeholder {
 }
 
 .credit {
+  position:absolute;
+  bottom: 0;
   width: 100%;
   height:  auto;
   display: block;
+  text-align: center;
 }
 
 .credit a {

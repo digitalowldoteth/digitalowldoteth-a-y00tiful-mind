@@ -292,7 +292,7 @@ textarea::placeholder {
 }
 
 .submitButton:hover {
-  background: var(--gold-fusion);
+  background: var(--light-sea-green);
 }
 
 .submitButton img {

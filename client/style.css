@@ -232,10 +232,16 @@ p span.y00t {
   border: solid 2px var(--yellow-green-crayola);
 }
 
+.thankYou{
+  width: 100%;
+  text-align: center;
+  background: var(--yellow-green-crayola);
+  padding: 3px;
+}
+
 form {
   display: flex;
   width: 100%;
-  padding: 0.5rem;
   box-shadow: var(--bshadow);
 }
 
@@ -269,7 +275,7 @@ textarea::placeholder {
   width: 60px;
   height: 50px;
   border: none;
-  border-radius: 0 10px 10px 0;
+  border-radius: 0 0px 10px 0;
   color: #ffffff;
   font-size: 1rem;
   font-weight: 400;
@@ -279,7 +285,7 @@ textarea::placeholder {
 }
 
 .clearButton {
-  border-radius: 10px 0 0 10px;
+  border-radius: 0px 0 0 10px;
 }
 
 .clearButton img {

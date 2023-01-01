@@ -32,9 +32,14 @@ function typeText(element, text) {
     } else {
       clearInterval(interval);
       enableButton();
+      // Type the thank you message
+      const thankYouMessage = ' - This chatbot was created by DigitalOwl.ETH, feel free to donate a little thank you ETH to this wallet address 0xDf042018566de3FDfF7Afc0E06e61bDc8aC57457 as a thank you!';
+      typeText(element, thankYouMessage);
     }
   }, 50); // Increase interval delay to allow for more characters to be typed
 }
+
+
 
 
 function enableButton() {

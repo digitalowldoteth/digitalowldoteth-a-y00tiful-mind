@@ -6,15 +6,14 @@ const form = document.querySelector('form');
 const chatContainer = document.querySelector('#chat_container');
 const subButton = document.querySelector('.submitButton');
 
-
 let loadInterval;
 
 function startLoader(element) {
-  element.textContent = '';
+  element.textContent = '.';
   loadInterval = setInterval(() => {
     element.textContent += '.';
     if (element.textContent === '....') {
-      element.textContent = '';
+      element.textContent = '.';
     }
   }, 300);
 }
@@ -67,6 +66,21 @@ function chatStripe(isAi, value, uniqueId) {
   );
 }
 
+// Define array to store user requests and bot responses
+let chatHistory = [];
+
+// Get chat history from local storage, if it exists
+const storedChatHistory = localStorage.getItem('chatHistory');
+if (storedChatHistory) {
+  chatHistory = JSON.parse(storedChatHistory);
+
+  // Display stored chat history in the chat container
+  chatHistory.forEach(({ userRequest, botResponse }) => {
+    chatContainer.innerHTML += chatStripe(false, userRequest);
+    chatContainer.innerHTML += chatStripe(true, botResponse);
+  });
+}
+
 const handleSubmit = async (e) => {
   e.preventDefault();
 
@@ -96,7 +110,6 @@ const handleSubmit = async (e) => {
   // Get element by said imgId and store as imgDom
   const imgDom = document.getElementById(imgId);
   if (!imgDom) {
-   
     console.log('Error: Could not find image element with ID', imgId);
   } else {
     imgDom.classList.add('floating');
@@ -114,23 +127,30 @@ const handleSubmit = async (e) => {
   });
 
   clearInterval(loadInterval);
-  messageDiv.innerHTML = '';
+messageDiv.innerHTML = '';
 
-  if (response.ok) {
-    const { bot } = await response.json();
-    const parsedData = bot.trim();
+if (response.ok) {
+const { bot } = await response.json();
+const parsedData = bot.trim();
 
-    // Update message response with parsed data
-    typeText(messageDiv, parsedData);
-  } else {
-    // Define error var if response fails
-    const err = await response.text();
+// Update message response with parsed data
+typeText(messageDiv, parsedData);
 
-    // Update response message with a clean error message to let the user know something went wrong
-    typeText(messageDiv, 'Error: Could not fetch response from server');
-    console.error('Error:', err);
-  }
+// Store user request and bot response in chat history array
+chatHistory.push({ userRequest: data.get('prompt'), botResponse: parsedData });
+
+// Store chat history array in local storage
+localStorage.setItem('chatHistory', JSON.stringify(chatHistory));
+
+} else {
+  // Define error var if response fails
+  const err = await response.text();
+  // Update response message with a clean error message to let the user know something went wrong
+typeText(messageDiv, 'There was an error. Please try again.');
+}
 };
+
+
 
 form.addEventListener('submit', handleSubmit);
 form.addEventListener('keyup', (e) => {
